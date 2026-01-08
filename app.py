@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 import matplotlib.pyplot as plt
-from matplotlib import rcParams
+import japanize_matplotlib
 from matplotlib.ticker import MaxNLocator
 
 #チンチロゲームクラス
@@ -97,8 +97,7 @@ class chinchiro:
                   
                 
     #所持金の推移グラフ      
-    def show_money_graph(self):
-        rcParams['font.family'] = 'MS Gothic'   #日本語に
+    def show_money_graph(self)
         rounds = list(range(0, len(self.money_history)))    #x軸に使用　0から所持金の推移リストの要素数まで
         
         fig,ax = plt.subplots()
@@ -174,4 +173,5 @@ match st.session_state.phase:#switch文みたいな
         game.show_money_graph()
         st.session_state.phase = "roll" #ロールフェーズに切り替え
         game.next_round_set()
+
         st.button("次の勝負") #ボタンは飾りだがうまくいく
