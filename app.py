@@ -97,7 +97,7 @@ class chinchiro:
                   
                 
     #所持金の推移グラフ      
-    def show_money_graph(self)
+    def show_money_graph(self):
         rounds = list(range(0, len(self.money_history)))    #x軸に使用　0から所持金の推移リストの要素数まで
         
         fig,ax = plt.subplots()
@@ -175,3 +175,4 @@ match st.session_state.phase:#switch文みたいな
         game.next_round_set()
 
         st.button("次の勝負") #ボタンは飾りだがうまくいく
+
