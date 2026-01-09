@@ -1,7 +1,6 @@
 import streamlit as st
 import random
 import matplotlib.pyplot as plt
-import japanize_matplotlib
 from matplotlib.ticker import MaxNLocator
 
 #チンチロゲームクラス
@@ -102,9 +101,9 @@ class chinchiro:
         
         fig,ax = plt.subplots()
         ax.plot(rounds,self.money_history,marker = "o")
-        ax.set_xlabel("ラウンド")
-        ax.set_ylabel("所持金")
-        ax.set_title("所持金の推移")
+        ax.set_xlabel("Round")
+        ax.set_ylabel("Money")
+        ax.set_title("Money　History")
         ax.grid(True)
         ax.xaxis.set_major_locator(MaxNLocator(integer=True)) #グラフの目盛りを整数にする
 
@@ -175,4 +174,5 @@ match st.session_state.phase:#switch文みたいな
         game.next_round_set()
 
         st.button("次の勝負") #ボタンは飾りだがうまくいく
+
 
